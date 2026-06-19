@@ -1,0 +1,4 @@
+# Projeto de referência visual (não faz parte do build da agenda)
+pulse-engineering-metrics-and-incident-response-console
+# Scripts utilitários (migrations) — não precisam ir pro deploy
+scripts
