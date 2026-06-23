@@ -48,8 +48,8 @@ export async function QrSection({ url }: { url: string }) {
               Aponte a câmera e assine
             </h2>
             <p className="mt-3 font-semibold text-black/55">
-              Escaneie o QR Code para abrir a Agenda Somma Club e adicionar ao seu
-              calendário em segundos. Perfeito para compartilhar nos encontros e nas redes.
+              Aponte a câmera no QR Code, abra a Agenda Somma Club e adicione ao seu
+              calendário em segundos. Perfeito pra compartilhar nos encontros e nas redes.
             </p>
             <p className="mt-4 inline-block rounded-lg bg-white px-3 py-1.5 text-sm font-semibold text-black/70 ring-1 ring-neutral-200">
               {pretty}

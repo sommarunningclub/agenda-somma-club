@@ -43,7 +43,7 @@ export async function generateMetadata({
   const date = formatEventDate(event.start_datetime, tz)
   const place = event.location_name ? `${event.location_name}, Brasília` : 'Brasília (DF)'
   // O template do layout já adiciona " | Somma Club" ao final.
-  const title = `${event.title} — ${date}`
+  const title = `${event.title} · ${date}`
   const description =
     plain(event.summary) ||
     plain(event.description) ||

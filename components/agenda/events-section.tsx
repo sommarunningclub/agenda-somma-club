@@ -27,13 +27,13 @@ export function EventsSection({
             href="#assinar"
             className="-mx-1 inline-flex min-h-[44px] items-center px-1 text-sm font-black uppercase text-[#cc2402] transition-colors hover:text-[#ff2c03]"
           >
-            Assinar para receber →
+            Assine e receba →
           </a>
         </div>
 
         {events.length === 0 ? (
           <div className="rounded-[1.5rem] border border-dashed border-neutral-300 bg-[#F8F9FA] p-10 text-center font-semibold text-black/50">
-            Em breve novos eventos por aqui. Assine a agenda para ser avisado.
+            Em breve, novos eventos por aqui. Assine a agenda que a gente te avisa.
           </div>
         ) : (
           <div className="grid gap-4 sm:grid-cols-2">

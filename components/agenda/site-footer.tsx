@@ -11,9 +11,9 @@ export function SiteFooter() {
           <div className="space-y-4">
             <img src="/somma-logo.svg" alt="Somma Club" className="h-8 w-auto" />
             <p className="max-w-xs text-sm text-white/55">
-              O maior running club do Distrito Federal. Comunidade gratuita e democrática,
-              com mais de 5 mil membros. Encontros todo sábado às 7h no Parque da Cidade,
-              em Brasília.
+              O maior running club do Distrito Federal. Uma comunidade gratuita e pra todo
+              mundo, com mais de 5 mil membros. A gente se encontra todo sábado, às 7h, no
+              Parque da Cidade, em Brasília.
             </p>
             <div className="flex gap-3">
               <a

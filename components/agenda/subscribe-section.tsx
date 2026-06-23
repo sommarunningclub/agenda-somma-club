@@ -72,7 +72,7 @@ export function SubscribeSection({
   id = 'assinar',
   eyebrow = 'É grátis',
   title = 'Adicione a agenda',
-  subtitle = 'Escolha o seu calendário e receba os encontros, treinos e corridas do Somma Club. A agenda passa a atualizar sozinha.',
+  subtitle = 'Escolha o seu calendário e receba os encontros, treinos e corridas do Somma Club. Daí pra frente, a agenda se atualiza sozinha.',
 }: {
   links: SubscribeLinks
   calendarSlug: CalendarSlug
@@ -146,9 +146,9 @@ export function SubscribeSection({
         </div>
 
         <p className="mt-5 text-center text-xs font-medium text-black/45">
-          No iPhone, confirme a assinatura que o sistema pedir. No Android, o Google abre no
-          navegador para você tocar em “Adicionar” — depois a agenda aparece sozinha no app.
-          No Outlook, confirme “Adicionar” na tela que abrir.
+          No iPhone, é só confirmar a assinatura que o sistema pedir. No Android, o Google
+          abre no navegador pra você tocar em “Adicionar” e a agenda aparece sozinha no app.
+          No Outlook, confirme o “Adicionar” na tela que abrir.
         </p>
       </div>
     </section>

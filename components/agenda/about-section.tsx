@@ -19,7 +19,7 @@ const PILLARS = [
   {
     icon: Sparkles,
     title: 'Aberto e gratuito',
-    text: 'Os encontros principais do Somma Club são gratuitos e abertos ao público. Sem mensalidade para correr com a gente — é só aparecer e fazer parte.',
+    text: 'Os encontros principais do Somma Club são gratuitos e abertos a todo mundo. Sem mensalidade pra correr com a gente. É só aparecer e fazer parte.',
   },
 ]
 
@@ -38,11 +38,11 @@ export function AboutSection() {
             O maior running club de Brasília
           </h2>
           <p className="mt-4 text-base font-semibold text-black/60 sm:text-lg">
-            O Somma Club é uma comunidade de corrida em Brasília, aberta a todos. Mais que
-            um grupo de corrida, é um movimento que conecta pessoas através do esporte — de
-            quem está dando os primeiros passos a quem treina para a próxima prova. A gente
-            corre junto, se apoia e celebra cada conquista. E o melhor: participar é de
-            graça.
+            O Somma Club é uma comunidade de corrida em Brasília, aberta a todo mundo. Mais
+            que um grupo de corrida, é um movimento que une gente pelo esporte: do primeiro
+            treino de quem tá começando agora ao último tiro de quem treina pra próxima
+            prova. A gente corre junto, se apoia e comemora cada conquista. E o melhor:
+            participar é de graça.
           </p>
         </div>
 

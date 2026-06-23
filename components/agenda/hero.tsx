@@ -36,7 +36,7 @@ export function Hero({ events }: { events: EventCardData[] }) {
           <h1
             data-anim="hero-item"
             className="mt-5 flex flex-col"
-            aria-label="Somma Club — running club e comunidade de corrida em Brasília"
+            aria-label="Somma Club: running club e comunidade de corrida em Brasília"
           >
             <span
               className="m-0 text-[clamp(3.25rem,11vw,150px)] font-black uppercase leading-[0.82] tracking-tighter text-white"
@@ -65,10 +65,10 @@ export function Hero({ events }: { events: EventCardData[] }) {
             data-anim="hero-item"
             className="mt-6 max-w-lg text-balance text-base font-semibold text-black/80 sm:text-lg"
           >
-            O <strong>running club de Brasília</strong> que corre junto. Encontros{' '}
-            <strong>gratuitos</strong> todo sábado, às 7h, no Parque da Cidade — para quem
-            está começando, para quem já corre e para quem quer fazer parte de uma
-            comunidade. Assine a agenda e receba cada treino, corrida e evento no seu
+            O <strong>running club de Brasília</strong> que corre junto. Todo sábado, às
+            7h, a gente se encontra no Parque da Cidade, e é <strong>de graça</strong>. Tá
+            começando agora, já corre faz tempo ou só quer fazer parte da turma? Vem com a
+            gente. Assine a agenda e receba cada treino, corrida e evento direto no seu
             calendário.
           </p>
 
@@ -107,7 +107,7 @@ export function Hero({ events }: { events: EventCardData[] }) {
                 <Bell className="h-4 w-4 text-[#ff6a52]" />
               </span>
               <div className="leading-tight">
-                <p className="text-[11px] font-bold">Lembrete automático</p>
+                <p className="text-[11px] font-bold">A gente te lembra</p>
                 <p className="text-[10px] text-white/80">24h · 2h · 30min antes</p>
               </div>
             </div>

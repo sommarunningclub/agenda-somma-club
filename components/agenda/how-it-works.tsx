@@ -5,19 +5,19 @@ const STEPS = [
   {
     icon: Smartphone,
     title: ['ESCOLHA SEU', 'CALENDÁRIO'],
-    text: 'iPhone/Mac, Google ou Outlook. Você usa o app que já tem.',
+    text: 'iPhone, Mac, Google ou Outlook. Você usa o app que já tem no bolso.',
     chips: ['iPhone', 'Google', 'Outlook'],
   },
   {
     icon: CalendarCheck,
     title: ['TOQUE EM', 'ADICIONAR'],
-    text: 'Assinatura única. Sem instalar nenhum aplicativo.',
+    text: 'Um toque e pronto. Sem baixar nenhum aplicativo.',
     chips: ['1 toque', 'grátis'],
   },
   {
     icon: RefreshCw,
     title: ['PRONTO, ATUALIZA', 'SOZINHO'],
-    text: 'Novos eventos e mudanças chegam automaticamente.',
+    text: 'Novidades e mudanças chegam sozinhas pra você.',
     chips: ['auto-sync'],
   },
 ]

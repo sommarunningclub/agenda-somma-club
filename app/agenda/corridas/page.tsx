@@ -14,7 +14,7 @@ import { getSiteUrl, DEFAULT_TIMEZONE } from '@/lib/constants'
 export const revalidate = 300
 
 export const metadata: Metadata = {
-  title: 'Corridas em Brasília 2026 — Calendário de Corridas de Rua no DF',
+  title: 'Corridas em Brasília 2026: Calendário de Corridas de Rua no DF',
   description:
     'Calendário das principais corridas de rua de Brasília e do Distrito Federal. Veja datas, locais e provas de corrida no DF e adicione tudo ao seu calendário gratuitamente com o Somma Club.',
   keywords: [
@@ -27,9 +27,9 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: '/agenda/corridas' },
   openGraph: {
-    title: 'Corridas em Brasília 2026 — Calendário de Corridas de Rua no DF',
+    title: 'Corridas em Brasília 2026: Calendário de Corridas de Rua no DF',
     description:
-      'As principais corridas de rua de Brasília e do DF em um só lugar. Datas, locais e provas — adicione ao seu calendário grátis.',
+      'As principais corridas de rua de Brasília e do DF em um só lugar. Datas, locais e provas prontos pra adicionar ao seu calendário grátis.',
     url: `${getSiteUrl()}/agenda/corridas`,
     siteName: 'Somma Club',
     locale: 'pt_BR',
@@ -103,7 +103,7 @@ export default async function CorridasPage() {
             <p className="mt-4 max-w-2xl text-base font-semibold text-black/75 sm:text-lg">
               O calendário das principais corridas de rua de Brasília e do Distrito Federal.
               Veja as datas e os locais das próximas provas e adicione tudo ao seu calendário
-              de graça — sem perder nenhuma corrida no DF.
+              de graça. Assim, você não perde nenhuma corrida no DF.
             </p>
           </div>
         </section>
@@ -117,8 +117,8 @@ export default async function CorridasPage() {
 
               {races.length === 0 ? (
                 <p className="mt-6 rounded-2xl border border-dashed border-neutral-300 bg-[#F8F9FA] p-10 text-center font-semibold text-black/50">
-                  Em breve as próximas corridas de Brasília por aqui. Assine a agenda para
-                  ser avisado.
+                  Em breve, as próximas corridas de Brasília por aqui. Assine a agenda que a
+                  gente te avisa.
                 </p>
               ) : (
                 <div className="mt-6 grid gap-4 sm:grid-cols-2">
@@ -140,7 +140,7 @@ export default async function CorridasPage() {
                           <strong className="text-black">
                             {formatEventDate(e.start_datetime, e.timezone || DEFAULT_TIMEZONE)}
                           </strong>{' '}
-                          — {e.title}
+                          · {e.title}
                         </Link>
                       </li>
                     ))}

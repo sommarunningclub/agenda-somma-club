@@ -23,7 +23,7 @@ import { buildSubscribeLinks } from '@/lib/subscribe-links'
 import { getSiteUrl } from '@/lib/constants'
 
 export const metadata: Metadata = {
-  title: 'Somma Club — Running Club e Comunidade de Corrida em Brasília (DF)',
+  title: 'Somma Club: Running Club e Comunidade de Corrida em Brasília (DF)',
   description:
     'O Somma Club é o maior running club de Brasília: comunidade de corrida aberta e gratuita, com encontros todo sábado no Parque da Cidade. Para iniciantes e experientes. Assine a agenda grátis e receba treinos, corridas e eventos no seu calendário.',
   keywords: [
@@ -40,7 +40,7 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: '/agenda' },
   openGraph: {
-    title: 'Somma Club — Running Club e Comunidade de Corrida em Brasília',
+    title: 'Somma Club: Running Club e Comunidade de Corrida em Brasília',
     description:
       'Comunidade de corrida aberta e gratuita em Brasília. Encontros todo sábado no Parque da Cidade, para iniciantes e experientes. Assine a agenda grátis.',
     url: `${getSiteUrl()}/agenda`,
@@ -58,7 +58,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Somma Club — Running Club e Comunidade de Corrida em Brasília',
+    title: 'Somma Club: Running Club e Comunidade de Corrida em Brasília',
     description:
       'Comunidade de corrida aberta e gratuita em Brasília. Encontros todo sábado no Parque da Cidade. Assine a agenda grátis.',
     images: ['/SMEWNGS-1336.jpg'],
@@ -103,7 +103,7 @@ export default async function AgendaPage() {
     name: 'Somma Club',
     alternateName: ['Somma Running Club', 'Agenda Somma Club'],
     description:
-      'O maior running club de Brasília. Comunidade de corrida aberta e gratuita, com encontros todo sábado no Parque da Cidade, para corredores de todos os níveis — de iniciantes a experientes.',
+      'O maior running club de Brasília. Comunidade de corrida aberta e gratuita, com encontros todo sábado no Parque da Cidade, para corredores de todos os níveis, de iniciantes a experientes.',
     url: siteUrl,
     logo: `${siteUrl}/somma-logo.svg`,
     image: `${siteUrl}/SMEWNGS-1336.jpg`,

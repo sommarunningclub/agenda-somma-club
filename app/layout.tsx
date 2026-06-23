@@ -12,7 +12,7 @@ const geistMono = Geist_Mono({ subsets: ['latin'], variable: '--font-geist-mono'
 export const metadata: Metadata = {
   metadataBase: new URL(getSiteUrl()),
   title: {
-    default: 'Somma Club — Running Club e Comunidade de Corrida em Brasília',
+    default: 'Somma Club: Running Club e Comunidade de Corrida em Brasília',
     template: '%s | Somma Club',
   },
   description:

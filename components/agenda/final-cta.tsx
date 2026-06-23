@@ -9,9 +9,9 @@ export function FinalCta() {
           Sua próxima corrida já tem data
         </h2>
         <p className="mx-auto mt-4 max-w-xl text-lg font-medium text-black/75">
-          Faça parte do maior running club de Brasília. Assine a agenda gratuita do Somma
-          Club e deixe o calendário te lembrar de cada treino, corrida e encontro. De
-          graça, para sempre.
+          Bora fazer parte do maior running club de Brasília? Assine a agenda gratuita do
+          Somma Club e deixe o calendário te lembrar de cada treino, corrida e encontro. De
+          graça, pra sempre.
         </p>
         <a
           href="#assinar"

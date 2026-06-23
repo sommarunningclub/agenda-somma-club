@@ -8,12 +8,12 @@ import {
 } from 'lucide-react'
 
 const BENEFITS = [
-  { icon: Users, title: 'Encontros de sábado', text: 'O treinão de sábado às 7h no Parque da Cidade, sempre no seu calendário.' },
-  { icon: CalendarHeart, title: 'Treinos da comunidade', text: 'Treinos coletivos e especiais, gratuitos e abertos para todos os níveis.' },
+  { icon: Users, title: 'O treinão de sábado', text: 'Sábado, 7h em ponto no Parque da Cidade. Sempre no seu calendário, nunca mais esquecido.' },
+  { icon: CalendarHeart, title: 'Treinos da comunidade', text: 'Treinos coletivos e especiais, de graça e abertos pra todos os níveis.' },
   { icon: MapPinned, title: 'Corridas em Brasília', text: 'As principais corridas de rua de Brasília e do DF, sempre no seu radar.' },
-  { icon: Flag, title: 'Eventos e ativações', text: 'Eventos especiais, provas e ativações com os parceiros do Somma.' },
-  { icon: Bell, title: 'Lembretes automáticos', text: 'Avisos antes de cada encontro: 24h, 2h e 30 min antes. Você nunca esquece.' },
-  { icon: RefreshCw, title: 'Atualização automática', text: 'Mudou o horário ou o local? Seu calendário recebe sozinho, sem esforço.' },
+  { icon: Flag, title: 'Eventos e ativações', text: 'Eventos, provas e ativações com os parceiros do Somma, fresquinhos pra você.' },
+  { icon: Bell, title: 'A gente te lembra', text: 'Um aviso antes de cada encontro: 24h, 2h e 30 min antes. Perder a hora, nunca mais.' },
+  { icon: RefreshCw, title: 'Tudo sempre atualizado', text: 'Mudou o horário ou o local? Seu calendário se atualiza sozinho, sem esforço.' },
 ]
 
 export function Benefits() {
@@ -31,9 +31,9 @@ export function Benefits() {
             Tudo que rola na comunidade
           </h2>
           <p className="mt-3 max-w-xl text-sm font-semibold text-black/55 sm:text-base">
-            Assinando a agenda do Somma Club você fica por dentro de cada treino, corrida e
-            encontro da maior comunidade de corrida de Brasília — sem depender de print no
-            grupo nem perder data.
+            Assine a agenda do Somma Club e fique por dentro de cada treino, corrida e
+            encontro da maior comunidade de corrida de Brasília. Sem depender de print no
+            grupo, sem perder nenhuma data.
           </p>
         </div>
 

@@ -173,8 +173,8 @@ export function RacesSection({
               Corridas em Brasília
             </h2>
             <p className="mt-3 font-semibold text-black/55">
-              As principais provas de rua do DF, reunidas pelo Somma. Assine a agenda de
-              corridas para receber tudo no seu calendário.
+              As principais provas de rua do DF, garimpadas pela gente. Assine a agenda de
+              corridas e receba tudo no seu calendário.
             </p>
           </div>
 
@@ -315,7 +315,7 @@ export function RacesSection({
               </div>
             ) : (
               <p className="mt-4 text-center text-sm font-medium text-black/40">
-                Nenhuma corrida neste mês. Use as setas para navegar.
+                Nenhuma corrida neste mês. Use as setas pra navegar pelos próximos.
               </p>
             )}
           </>
