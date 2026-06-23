@@ -296,7 +296,8 @@ export function ScrollProvider() {
 
     const lenis = new Lenis({
       duration: LENIS.duration,
-      anchors: { offset: 0, onComplete: () => {} },
+      // Lenis encaminha este objeto para scrollTo nos cliques em âncora (#id).
+      anchors: { duration: LENIS.anchorsDuration },
     })
 
     lenis.on('scroll', ScrollTrigger.update)
