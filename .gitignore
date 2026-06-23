@@ -33,3 +33,9 @@ next-env.d.ts
 
 # testing
 /coverage
+
+# superpowers SDD scratch
+/.superpowers
+
+# captura de referência (layout Wero) — não versionar
+/sowieso.wero-wallet.eu_nl_ondernemer
