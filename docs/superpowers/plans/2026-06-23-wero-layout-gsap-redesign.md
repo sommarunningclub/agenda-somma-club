@@ -62,8 +62,8 @@ O ambiente de teste (`vitest`) é **node-only**; não há jsdom/RTL configurado 
 
 - [ ] **Step 1: Instalar Lenis**
 
-Run: `npm install lenis@^1.1.18`
-Expected: `package.json` ganha `"lenis": "^1.1.18"` em dependencies; `npm install` conclui sem erro.
+Run: `npm install lenis` (última 1.x; API `raf`/`on`/`destroy`/`anchors` estável em todo o 1.x)
+Expected: `package.json` ganha `"lenis"` (^1.3.x) em dependencies; `npm install` conclui sem erro.
 
 - [ ] **Step 2: Escrever o teste que falha** — `lib/anim.test.ts`
 
