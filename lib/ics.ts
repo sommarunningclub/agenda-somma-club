@@ -159,12 +159,16 @@ function statusToIcs(status: CalendarEvent['status']): string {
   return 'CONFIRMED'
 }
 
-function buildLocation(event: CalendarEvent): string | null {
+/** Local em uma linha ("Nome, Endereço"). Exportado: os deeplinks de
+ *  Google/Outlook (evento único) precisam do mesmo texto do LOCATION. */
+export function buildLocation(event: CalendarEvent): string | null {
   const parts = [event.location_name, event.location_address].filter(Boolean)
   return parts.length ? parts.join(', ') : null
 }
 
-function buildDescription(event: CalendarEvent): string | null {
+/** Descrição do evento + links estruturados. Exportado pelo mesmo motivo
+ *  de buildLocation: manter .ics e deeplinks com o mesmo conteúdo. */
+export function buildDescription(event: CalendarEvent): string | null {
   const desc = event.description?.trim() ?? ''
   const blocks: string[] = []
   if (desc) blocks.push(desc)
