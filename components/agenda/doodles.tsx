@@ -54,7 +54,7 @@ export function ArrowShort({ className }: { className?: string }) {
   )
 }
 
-/** Selo circular girando — CTA decorativo. */
+/** Selo circular girando (CTA decorativo). */
 export function SpinBadge({ className }: { className?: string }) {
   return (
     <a

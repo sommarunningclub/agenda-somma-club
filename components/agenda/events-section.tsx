@@ -13,11 +13,9 @@ export function EventsSection({
       <div data-anim="reveal" className="mx-auto max-w-6xl">
         <div className="mb-10 flex flex-wrap items-end justify-between gap-4">
           <div className="max-w-2xl">
-            <span className="text-xs font-black uppercase tracking-[0.18em] text-[#ff2c03]">
-              Próximos eventos
-            </span>
+            <span className="agenda-eyebrow">Próximos eventos</span>
             <h2
-              className="mt-3 text-4xl font-black uppercase leading-[0.95] tracking-tight text-black sm:text-5xl"
+              className="agenda-title mt-3 text-4xl leading-[0.95] sm:text-5xl"
               style={{ fontFamily: '"Arial Black", Impact, sans-serif' }}
             >
               Entram na agenda
@@ -25,15 +23,15 @@ export function EventsSection({
           </div>
           <a
             href="#assinar"
-            className="-mx-1 inline-flex min-h-[44px] items-center px-1 text-sm font-black uppercase text-[#cc2402] transition-colors hover:text-[#ff2c03]"
+            className="-mx-1 inline-flex min-h-[44px] items-center px-1 text-sm font-black uppercase text-somma-orange-dark transition-colors hover:text-somma-orange"
           >
-            Assinar para receber →
+            Assine e receba →
           </a>
         </div>
 
         {events.length === 0 ? (
-          <div className="rounded-[1.5rem] border border-dashed border-neutral-300 bg-[#F8F9FA] p-10 text-center font-semibold text-black/50">
-            Em breve novos eventos por aqui. Assine a agenda para ser avisado.
+          <div className="rounded-[1.5rem] border border-dashed border-somma-orange-muted bg-somma-orange-soft/40 p-10 text-center font-semibold text-somma-ink-muted">
+            Em breve, novos eventos por aqui. Assine a agenda que a gente te avisa.
           </div>
         ) : (
           <div className="grid gap-4 sm:grid-cols-2">
@@ -44,7 +42,7 @@ export function EventsSection({
         )}
 
         {isSample ? (
-          <p className="mt-6 text-center text-xs font-medium text-black/40">
+          <p className="mt-6 text-center text-xs font-medium text-somma-ink-muted/70">
             * Exemplos ilustrativos. Configure o Supabase para exibir os eventos reais.
           </p>
         ) : null}

@@ -5,7 +5,7 @@ import { CalendarPlus } from 'lucide-react'
 import { track } from '@/lib/tracking'
 
 /**
- * Barra de ação fixa no rodapé (só mobile) — padrão de app de iPhone.
+ * Barra de ação fixa no rodapé (só mobile), no padrão de app de iPhone.
  * Aparece depois de rolar o hero e some perto do fim (para não cobrir o footer).
  */
 export function MobileCtaBar() {

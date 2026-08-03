@@ -163,28 +163,26 @@ export function RacesSection({
       <div data-anim="reveal" className="mx-auto max-w-6xl">
         <div className="mb-8 flex flex-wrap items-end justify-between gap-4">
           <div className="max-w-2xl">
-            <span className="text-xs font-black uppercase tracking-[0.18em] text-[#ff2c03]">
-              Agenda externa · curadoria Somma
-            </span>
+            <span className="agenda-eyebrow">Agenda externa · curadoria Somma</span>
             <h2
-              className="mt-3 text-4xl font-black uppercase leading-[0.95] tracking-tight text-black sm:text-5xl"
+              className="agenda-title mt-3 text-4xl leading-[0.95] sm:text-5xl"
               style={{ fontFamily: '"Arial Black", Impact, sans-serif' }}
             >
               Corridas em Brasília
             </h2>
-            <p className="mt-3 font-semibold text-black/55">
-              As principais provas de rua do DF, reunidas pelo Somma. Assine a agenda de
-              corridas para receber tudo no seu calendário.
+            <p className="mt-3 font-semibold text-somma-ink-muted">
+              As principais provas de rua do DF, garimpadas pela gente. Assine a agenda de
+              corridas e receba tudo no seu calendário.
             </p>
           </div>
 
           {/* Toggle */}
-          <div className="flex rounded-full border border-neutral-200 bg-white p-1">
+          <div className="flex rounded-full border border-somma-orange-muted/80 bg-white p-1">
             <button
               type="button"
               onClick={() => setView('calendar')}
               className={`inline-flex items-center gap-1.5 rounded-full px-3 py-1.5 text-sm font-bold transition-colors ${
-                view === 'calendar' ? 'bg-black text-white' : 'text-black/55 hover:text-black'
+                view === 'calendar' ? 'bg-somma-orange text-white' : 'text-somma-ink-muted hover:text-somma-ink'
               }`}
             >
               <CalendarDays className="h-4 w-4" />
@@ -194,7 +192,7 @@ export function RacesSection({
               type="button"
               onClick={() => setView('list')}
               className={`inline-flex items-center gap-1.5 rounded-full px-3 py-1.5 text-sm font-bold transition-colors ${
-                view === 'list' ? 'bg-black text-white' : 'text-black/55 hover:text-black'
+                view === 'list' ? 'bg-somma-orange text-white' : 'text-somma-ink-muted hover:text-somma-ink'
               }`}
             >
               <List className="h-4 w-4" />
@@ -211,7 +209,7 @@ export function RacesSection({
                 type="button"
                 onClick={() => shift(-1)}
                 aria-label="Mês anterior"
-                className="flex h-9 w-9 items-center justify-center rounded-xl border border-neutral-200 bg-white text-black/60 transition-colors hover:bg-neutral-50"
+                className="flex h-9 w-9 items-center justify-center rounded-xl border border-somma-orange-muted/80 bg-white text-somma-ink-muted/60 transition-colors hover:bg-neutral-50"
               >
                 <ChevronLeft className="h-4 w-4" />
               </button>
@@ -219,29 +217,29 @@ export function RacesSection({
                 type="button"
                 onClick={() => shift(1)}
                 aria-label="Próximo mês"
-                className="flex h-9 w-9 items-center justify-center rounded-xl border border-neutral-200 bg-white text-black/60 transition-colors hover:bg-neutral-50"
+                className="flex h-9 w-9 items-center justify-center rounded-xl border border-somma-orange-muted/80 bg-white text-somma-ink-muted/60 transition-colors hover:bg-neutral-50"
               >
                 <ChevronRight className="h-4 w-4" />
               </button>
-              <h3 className="ml-1 text-lg font-black uppercase tracking-tight text-black">
+              <h3 className="ml-1 text-lg font-black uppercase tracking-tight text-somma-ink">
                 {MONTHS[month.month]} {month.year}
               </h3>
               <button
                 type="button"
                 onClick={() => setMonth(firstMonth)}
-                className="ml-auto rounded-lg border border-neutral-200 bg-white px-3 py-1.5 text-xs font-bold text-black/60 transition-colors hover:bg-neutral-50"
+                className="ml-auto rounded-lg border border-somma-orange-muted/80 bg-white px-3 py-1.5 text-xs font-bold text-somma-ink-muted/60 transition-colors hover:bg-neutral-50"
               >
                 Início
               </button>
             </div>
 
             {/* Grade */}
-            <div className="overflow-hidden rounded-2xl border border-neutral-200 bg-white">
-              <div className="grid grid-cols-7 border-b border-neutral-200">
+            <div className="overflow-hidden rounded-2xl border border-somma-orange-muted/80 bg-white">
+              <div className="grid grid-cols-7 border-b border-somma-orange-muted/80">
                 {WEEKDAYS.map((w) => (
                   <div
                     key={w}
-                    className="px-1 py-2.5 text-center text-[11px] font-bold uppercase tracking-wider text-black/35"
+                    className="px-1 py-2.5 text-center text-[11px] font-bold uppercase tracking-wider text-somma-ink-muted/35"
                   >
                     {w}
                   </div>
@@ -263,7 +261,7 @@ export function RacesSection({
                   >
                     <span
                       className={`text-xs font-bold ${
-                        cell.inMonth ? 'text-black/70' : 'text-black/25'
+                        cell.inMonth ? 'text-somma-ink-muted/70' : 'text-somma-ink-muted/25'
                       }`}
                     >
                       {cell.day}
@@ -290,11 +288,11 @@ export function RacesSection({
                 {monthRaces.map((r) => (
                   <div
                     key={r.id}
-                    className="flex flex-wrap items-center justify-between gap-3 rounded-xl border border-neutral-200 bg-white px-4 py-3"
+                    className="flex flex-wrap items-center justify-between gap-3 rounded-xl border border-somma-orange-muted/80 bg-white px-4 py-3"
                   >
                     <div className="min-w-0">
-                      <p className="font-black text-black">{r.title}</p>
-                      <p className="text-xs font-semibold text-black/45">{dateLabel(r)}</p>
+                      <p className="font-black text-somma-ink">{r.title}</p>
+                      <p className="text-xs font-semibold text-somma-ink-muted/80">{dateLabel(r)}</p>
                     </div>
                     <div className="flex items-center gap-3">
                       <StatusPill status={r.summary} />
@@ -314,18 +312,18 @@ export function RacesSection({
                 ))}
               </div>
             ) : (
-              <p className="mt-4 text-center text-sm font-medium text-black/40">
-                Nenhuma corrida neste mês. Use as setas para navegar.
+              <p className="mt-4 text-center text-sm font-medium text-somma-ink-muted/40">
+                Nenhuma corrida neste mês. Use as setas pra navegar pelos próximos.
               </p>
             )}
           </>
         ) : (
           <>
             {/* Tabela (desktop) */}
-            <div className="hidden overflow-hidden rounded-2xl border border-neutral-200 bg-white lg:block">
+            <div className="hidden overflow-hidden rounded-2xl border border-somma-orange-muted/80 bg-white lg:block">
               <table className="w-full text-sm">
                 <thead>
-                  <tr className="border-b border-neutral-200 text-left text-[11px] font-bold uppercase tracking-wider text-black/40">
+                  <tr className="border-b border-somma-orange-muted/80 text-left text-[11px] font-bold uppercase tracking-wider text-somma-ink-muted/40">
                     <th className="px-5 py-3.5">Corrida</th>
                     <th className="px-5 py-3.5">Descrição</th>
                     <th className="whitespace-nowrap px-5 py-3.5">Data</th>
@@ -336,9 +334,9 @@ export function RacesSection({
                 <tbody className="divide-y divide-neutral-100">
                   {prepared.map((r) => (
                     <tr key={r.id} className="align-top transition-colors hover:bg-neutral-50/60">
-                      <td className="px-5 py-4 font-black text-black">{r.title}</td>
-                      <td className="max-w-sm px-5 py-4 text-black/60">{r.description}</td>
-                      <td className="whitespace-nowrap px-5 py-4 font-semibold text-black/70">
+                      <td className="px-5 py-4 font-black text-somma-ink">{r.title}</td>
+                      <td className="max-w-sm px-5 py-4 text-somma-ink-muted/60">{r.description}</td>
+                      <td className="whitespace-nowrap px-5 py-4 font-semibold text-somma-ink-muted/70">
                         {dateLabel(r)}
                       </td>
                       <td className="px-5 py-4">
@@ -356,10 +354,10 @@ export function RacesSection({
                             <ArrowUpRight className="h-4 w-4" />
                           </a>
                         ) : (
-                          <span className="text-black/30">—</span>
+                          <span className="text-somma-ink-muted/30">—</span>
                         )}
                         {r.partner_name ? (
-                          <span className="mt-0.5 block text-xs text-black/35">
+                          <span className="mt-0.5 block text-xs text-somma-ink-muted/35">
                             via {r.partner_name}
                           </span>
                         ) : null}
@@ -373,15 +371,15 @@ export function RacesSection({
             {/* Cards (mobile) */}
             <div className="space-y-3 lg:hidden">
               {prepared.map((r) => (
-                <div key={r.id} className="rounded-2xl border border-neutral-200 bg-white p-4">
+                <div key={r.id} className="rounded-2xl border border-somma-orange-muted/80 bg-white p-4">
                   <div className="flex items-start justify-between gap-3">
-                    <h3 className="font-black text-black">{r.title}</h3>
-                    <span className="shrink-0 whitespace-nowrap text-sm font-bold text-black/70">
+                    <h3 className="font-black text-somma-ink">{r.title}</h3>
+                    <span className="shrink-0 whitespace-nowrap text-sm font-bold text-somma-ink-muted/70">
                       {dateLabel(r)}
                     </span>
                   </div>
                   {r.description ? (
-                    <p className="mt-1.5 text-sm text-black/55">{r.description}</p>
+                    <p className="mt-1.5 text-sm text-somma-ink-muted">{r.description}</p>
                   ) : null}
                   <div className="mt-3 flex flex-wrap items-center justify-between gap-2">
                     <StatusPill status={r.summary} />
@@ -421,11 +419,11 @@ export function RacesSection({
                 {day.races.map((r) => (
                   <div
                     key={r.id}
-                    className="rounded-xl border border-neutral-200 bg-[#F8F9FA] p-3.5"
+                    className="rounded-xl border border-somma-orange-muted/80 bg-somma-orange-soft/40 p-3.5"
                   >
-                    <p className="font-black text-black">{r.title}</p>
+                    <p className="font-black text-somma-ink">{r.title}</p>
                     {r.description ? (
-                      <p className="mt-1 text-sm text-black/55">{r.description}</p>
+                      <p className="mt-1 text-sm text-somma-ink-muted">{r.description}</p>
                     ) : null}
                     <div className="mt-3 flex flex-wrap items-center justify-between gap-2">
                       <StatusPill status={r.summary} />
@@ -442,13 +440,13 @@ export function RacesSection({
                       ) : null}
                     </div>
                     {r.partner_name ? (
-                      <p className="mt-1 text-xs text-black/35">via {r.partner_name}</p>
+                      <p className="mt-1 text-xs text-somma-ink-muted/35">via {r.partner_name}</p>
                     ) : null}
                   </div>
                 ))}
               </div>
             ) : (
-              <p className="text-sm font-medium text-black/50">
+              <p className="text-sm font-medium text-somma-ink-muted/50">
                 Nenhuma corrida neste dia.
               </p>
             )}

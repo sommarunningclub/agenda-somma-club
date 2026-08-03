@@ -128,10 +128,40 @@
       linear-gradient(to bottom, rgba(0, 0, 0, 0.06) 1px, transparent 1px);
     background-size: 56px 56px;
   }
-  /* Brilho escuro radial — profundidade sobre o laranja */
+  /* Brilho escuro radial — profundidade sobre o laranja (versão mais leve) */
   .bg-radial-ink {
     background:
-      radial-gradient(70% 60% at 80% 10%, rgba(0, 0, 0, 0.22) 0%, rgba(0, 0, 0, 0) 60%),
-      radial-gradient(60% 50% at 0% 100%, rgba(0, 0, 0, 0.18) 0%, rgba(0, 0, 0, 0) 60%);
+      radial-gradient(70% 60% at 80% 10%, rgba(0, 0, 0, 0.12) 0%, rgba(0, 0, 0, 0) 60%),
+      radial-gradient(60% 50% at 0% 100%, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0) 60%);
+  }
+
+  /* Superfície principal da landing — creme quente, menos “caixa branca” */
+  .agenda-surface {
+    @apply bg-gradient-to-b from-somma-cream via-somma-surface to-white text-somma-ink;
+  }
+
+  /* Cards com borda quente e fundo levemente translúcido */
+  .agenda-card {
+    @apply rounded-[1.75rem] border border-somma-orange-muted/80 bg-white/75 p-7 shadow-sm shadow-somma-orange/[0.05] backdrop-blur-sm transition-colors hover:border-somma-orange/35;
+  }
+
+  .agenda-card-sm {
+    @apply rounded-[1.5rem] border border-somma-orange-muted/80 bg-white/75 shadow-sm shadow-somma-orange/[0.04] backdrop-blur-sm transition-colors hover:border-somma-orange/35;
+  }
+
+  .agenda-icon {
+    @apply flex items-center justify-center rounded-2xl bg-somma-orange/10 text-somma-orange;
+  }
+
+  .agenda-eyebrow {
+    @apply text-xs font-black uppercase tracking-[0.18em] text-somma-orange;
+  }
+
+  .agenda-title {
+    @apply font-black uppercase tracking-tight text-somma-ink;
+  }
+
+  .agenda-body {
+    @apply font-semibold text-somma-ink-muted;
   }
 }

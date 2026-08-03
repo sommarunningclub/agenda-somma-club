@@ -43,7 +43,7 @@ export async function generateMetadata({
   const date = formatEventDate(event.start_datetime, tz)
   const place = event.location_name ? `${event.location_name}, Brasília` : 'Brasília (DF)'
   // O template do layout já adiciona " | Somma Club" ao final.
-  const title = `${event.title} — ${date}`
+  const title = `${event.title} · ${date}`
   const description =
     plain(event.summary) ||
     plain(event.description) ||
@@ -155,7 +155,7 @@ export default async function EventPage({
       <main>
         {/* Hero do evento */}
         <section className="relative overflow-hidden bg-[#ff2c03] px-5 py-10 sm:px-8 md:py-14">
-          <div className="mx-auto max-w-3xl">
+          <div data-anim="reveal" className="mx-auto max-w-3xl">
             <Link
               href="/agenda"
               className="inline-flex items-center gap-1.5 text-sm font-bold text-black/70 transition-colors hover:text-black"
@@ -194,10 +194,10 @@ export default async function EventPage({
           </div>
         </section>
 
-        <div className="relative z-10 rounded-t-[2.5rem] bg-white text-neutral-900 shadow-[0_-30px_60px_rgba(0,0,0,0.25)] md:rounded-t-[3.5rem]">
+        <div className="agenda-surface relative z-10 rounded-t-[2.5rem] shadow-[0_-20px_50px_rgba(255,44,3,0.12)] md:rounded-t-[3.5rem]">
           <article className="mx-auto max-w-3xl px-5 py-12 sm:px-8">
             {/* Ficha do evento */}
-            <dl className="grid gap-3 sm:grid-cols-2">
+            <dl data-anim="reveal-stagger" className="grid gap-3 sm:grid-cols-2">
               <InfoRow icon={CalendarDays} label="Data" value={date} />
               <InfoRow
                 icon={Clock}
@@ -224,7 +224,7 @@ export default async function EventPage({
             </dl>
 
             {event.description ? (
-              <div className="mt-10">
+              <div data-anim="reveal" className="mt-10">
                 <h2 className="text-xl font-black uppercase tracking-tight text-black">
                   Sobre o evento
                 </h2>
@@ -283,7 +283,7 @@ export default async function EventPage({
                 <h2 className="text-2xl font-black uppercase tracking-tight text-black">
                   Próximos eventos
                 </h2>
-                <div className="mt-6 grid gap-4 sm:grid-cols-2">
+                <div data-anim="reveal-stagger" className="mt-6 grid gap-4 sm:grid-cols-2">
                   {related.map((e) => (
                     <EventCard key={e.id} event={toCardData(e)} />
                   ))}

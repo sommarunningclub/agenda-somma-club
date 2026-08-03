@@ -74,7 +74,7 @@ export function CalendarMockup({ events }: { events: EventCardData[] }) {
         </ul>
 
         <div className="border-t border-white/10 bg-white/[0.02] px-5 py-3 text-center text-[11px] text-white/40">
-          Atualiza sozinho quando o Somma publica algo novo
+          Atualiza sozinho toda vez que o Somma posta algo novo
         </div>
       </div>
     </div>
