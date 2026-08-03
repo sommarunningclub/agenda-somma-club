@@ -1,4 +1,5 @@
 import { HeartHandshake, MapPin, CalendarClock, Sparkles } from 'lucide-react'
+import { runningRoutePath } from '@/lib/route-path'
 
 const PILLARS = [
   {
@@ -23,21 +24,39 @@ const PILLARS = [
   },
 ]
 
-export function AboutSection() {
+const ROUTE = runningRoutePath({ width: 1000, height: 320, points: 8, seed: 21 })
+
+export function ManifestoSection() {
   return (
-    <section id="sobre" className="scroll-mt-24 px-5 py-14 sm:px-8 md:py-20">
-      <div data-anim="reveal" className="mx-auto max-w-6xl">
-        <div className="mb-10 max-w-3xl">
-          <span className="text-xs font-black uppercase tracking-[0.18em] text-[#ff2c03]">
-            O que é o Somma Club
-          </span>
+    <section id="sobre" className="relative scroll-mt-24 overflow-hidden px-5 py-16 sm:px-8 md:py-24">
+      <svg
+        viewBox="0 0 1000 320"
+        className="pointer-events-none absolute inset-x-0 top-1/2 -z-0 h-auto w-full -translate-y-1/2 opacity-[0.18]"
+        fill="none"
+        aria-hidden
+      >
+        <path
+          data-anim="route"
+          d={ROUTE}
+          stroke="#ff5a3d"
+          strokeWidth={6}
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+      </svg>
+
+      <div className="relative mx-auto max-w-6xl">
+        <div data-anim="reveal" className="mx-auto max-w-3xl text-center">
+          <span className="agenda-eyebrow">O que é o Somma Club</span>
           <h2
-            className="mt-3 text-4xl font-black uppercase leading-[0.95] tracking-tight text-black sm:text-5xl"
+            className="agenda-title mt-4 text-[clamp(2.5rem,7vw,5.5rem)] leading-[0.9]"
             style={{ fontFamily: '"Arial Black", Impact, sans-serif' }}
           >
-            O maior running club de Brasília
+            Correr junto
+            <br />
+            muda tudo
           </h2>
-          <p className="mt-4 text-base font-semibold text-black/60 sm:text-lg">
+          <p className="agenda-body mx-auto mt-5 max-w-2xl text-base sm:text-lg">
             O Somma Club é uma comunidade de corrida em Brasília, aberta a todo mundo. Mais
             que um grupo de corrida, é um movimento que une gente pelo esporte: do primeiro
             treino de quem tá começando agora ao último tiro de quem treina pra próxima
@@ -46,19 +65,17 @@ export function AboutSection() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
+        <div
+          data-anim="reveal-stagger"
+          className="mt-12 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4"
+        >
           {PILLARS.map((p) => (
-            <div
-              key={p.title}
-              className="rounded-[1.75rem] border border-neutral-200 bg-[#F8F9FA] p-7 transition-colors hover:border-[#ff2c03]/40"
-            >
-              <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-black text-[#ff6a52]">
+            <div key={p.title} className="agenda-card">
+              <div className="agenda-icon h-11 w-11">
                 <p.icon className="h-5 w-5" />
               </div>
-              <h3 className="mt-4 text-lg font-black uppercase leading-tight text-black">
-                {p.title}
-              </h3>
-              <p className="mt-1.5 text-sm font-semibold text-black/55">{p.text}</p>
+              <h3 className="agenda-title mt-4 text-lg leading-tight">{p.title}</h3>
+              <p className="agenda-body mt-1.5 text-sm">{p.text}</p>
             </div>
           ))}
         </div>

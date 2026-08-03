@@ -107,16 +107,14 @@ export function SubscribeSection({
     <section id={id} className="scroll-mt-24 px-5 py-14 sm:px-8 md:py-20">
       <div data-anim="reveal" className="mx-auto max-w-md">
         <div className="text-center">
-          <span className="text-xs font-black uppercase tracking-[0.18em] text-[#ff2c03]">
-            {eyebrow}
-          </span>
+          <span className="agenda-eyebrow">{eyebrow}</span>
           <h2
-            className="mt-3 text-4xl font-black uppercase leading-[0.95] tracking-tight text-black sm:text-5xl"
+            className="agenda-title mt-3 text-4xl leading-[0.95] sm:text-5xl"
             style={{ fontFamily: '"Arial Black", Impact, sans-serif' }}
           >
             {title}
           </h2>
-          <p className="mx-auto mt-3 max-w-sm font-semibold text-black/55">{subtitle}</p>
+          <p className="agenda-body mx-auto mt-3 max-w-sm">{subtitle}</p>
         </div>
 
         <div className="mt-8 flex flex-col gap-3">
@@ -129,23 +127,23 @@ export function SubscribeSection({
               onClick={() => handleSubscribe(key)}
               className={`group flex items-center gap-4 rounded-2xl border-2 p-4 transition-all active:scale-[0.99] ${
                 selected === key
-                  ? 'border-[#ff2c03] bg-[#ff2c03]/[0.06]'
-                  : 'border-neutral-200 bg-white hover:border-black'
+                  ? 'border-somma-orange bg-somma-orange-soft'
+                  : 'border-somma-orange-muted/80 bg-white/70 hover:border-somma-orange/40'
               }`}
             >
               <span className="flex h-12 w-12 shrink-0 items-center justify-center">
                 <Icon className="h-10 w-10" />
               </span>
               <span className="min-w-0 flex-1 text-left">
-                <span className="block font-black text-black">{label}</span>
-                <span className="block text-xs font-semibold text-black/45">{hint}</span>
+                <span className="block font-black text-somma-ink">{label}</span>
+                <span className="block text-xs font-semibold text-somma-ink-muted">{hint}</span>
               </span>
-              <ChevronRight className="h-5 w-5 shrink-0 text-black/30 transition-transform group-hover:translate-x-0.5" />
+              <ChevronRight className="h-5 w-5 shrink-0 text-somma-orange/40 transition-transform group-hover:translate-x-0.5" />
             </a>
           ))}
         </div>
 
-        <p className="mt-5 text-center text-xs font-medium text-black/45">
+        <p className="mt-5 text-center text-xs font-medium text-somma-ink-muted">
           No iPhone, é só confirmar a assinatura que o sistema pedir. No Android, o Google
           abre no navegador pra você tocar em “Adicionar” e a agenda aparece sozinha no app.
           No Outlook, confirme o “Adicionar” na tela que abrir.

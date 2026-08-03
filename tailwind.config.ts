@@ -17,10 +17,15 @@ const config: Config = {
         // Marca SOMMA
         somma: {
           orange: '#ff2c03',
-          'orange-light': '#ff4d35',
+          'orange-light': '#ff5a3d',
           'orange-dark': '#cc2402',
+          'orange-soft': '#fff0eb',
+          'orange-muted': '#f5d5cc',
+          surface: '#fffaf7',
+          cream: '#fff5f0',
+          ink: '#3d2820',
+          'ink-muted': '#8b7268',
           black: '#0a0a0a',
-          ink: '#111111',
           gray: '#8a8a8a',
         },
         background: 'hsl(var(--background))',

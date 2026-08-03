@@ -3,7 +3,7 @@ import Link from 'next/link'
 import { SiteHeader } from '@/components/agenda/site-header'
 import { SiteFooter } from '@/components/agenda/site-footer'
 import { Hero } from '@/components/agenda/hero'
-import { AboutSection } from '@/components/agenda/about-section'
+import { ManifestoSection } from '@/components/agenda/manifesto-section'
 import { HowItWorks } from '@/components/agenda/how-it-works'
 import { Benefits } from '@/components/agenda/benefits'
 import { EventsSection } from '@/components/agenda/events-section'
@@ -12,7 +12,8 @@ import { Faq } from '@/components/agenda/faq'
 import { RacesSection } from '@/components/agenda/races-section'
 import { QrSection } from '@/components/agenda/qr-section'
 import { Marquee } from '@/components/agenda/marquee'
-import { Animations } from '@/components/agenda/animations'
+import { VideoSection } from '@/components/agenda/video-section'
+import { PartnersSection } from '@/components/agenda/partners-section'
 import { FAQ_ITEMS } from '@/lib/faq'
 import { FinalCta } from '@/components/agenda/final-cta'
 import { PageViewTracker } from '@/components/agenda/page-view-tracker'
@@ -169,13 +170,12 @@ export default async function AgendaPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
       <PageViewTracker />
-      <Animations />
       <SiteHeader />
       <main>
         <Hero events={events} />
         <Marquee />
-        <div className="relative z-10 rounded-t-[2.5rem] bg-white text-neutral-900 shadow-[0_-30px_60px_rgba(0,0,0,0.25)] md:rounded-t-[3.5rem]">
-          <AboutSection />
+        <div className="agenda-surface relative z-10 rounded-t-[2.5rem] shadow-[0_-20px_50px_rgba(255,44,3,0.12)] md:rounded-t-[3.5rem]">
+          <ManifestoSection />
           <HowItWorks />
           <Benefits />
           <EventsSection events={events} isSample={isSample} />
@@ -200,6 +200,8 @@ export default async function AgendaPage() {
               subtitle="Receba as principais provas de Brasília direto no seu calendário."
             />
           ) : null}
+          <VideoSection />
+          <PartnersSection />
           <Faq />
         </div>
         <FinalCta />

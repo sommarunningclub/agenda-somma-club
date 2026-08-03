@@ -3,69 +3,54 @@
 import { useEffect } from 'react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import { REVEAL, EASES, DURATION, prefersReducedMotion } from '@/lib/anim'
 
 /**
- * Orquestrador de animações GSAP da landing (progressive enhancement):
- * - entrada do hero (stagger)
- * - flutuação contínua do mock de calendário
- * - reveals no scroll dos painéis
+ * Orquestrador de animações GSAP do site (progressive enhancement).
+ * Easings restritos a: none, expo, power4, power2.out, power2.in, power2.inOut.
  * Respeita prefers-reduced-motion (sem JS, o conteúdo já fica visível).
  */
 export function Animations() {
   useEffect(() => {
-    if (typeof window === 'undefined') return
-    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches
-    if (reduce) return
+    if (prefersReducedMotion()) return
 
     gsap.registerPlugin(ScrollTrigger)
-    // No iOS, o colapso da barra do Safari dispara resize; evita recalcular à toa.
     ScrollTrigger.config({ ignoreMobileResize: true })
 
     const ctx = gsap.context(() => {
-      // Entrada do hero
       const heroItems = gsap.utils.toArray<HTMLElement>('[data-anim="hero-item"]')
       if (heroItems.length) {
         gsap.from(heroItems, {
           y: 30,
           autoAlpha: 0,
-          duration: 0.85,
-          ease: 'power3.out',
-          stagger: 0.1,
+          duration: 0.6,
+          ease: EASES.out,
+          stagger: REVEAL.stagger,
         })
       }
 
-      // Flutuação contínua (mock do calendário)
       gsap.utils.toArray<HTMLElement>('[data-anim="float"]').forEach((el) => {
-        gsap.to(el, {
-          y: -14,
-          duration: 3.2,
-          ease: 'sine.inOut',
-          repeat: -1,
-          yoyo: true,
-        })
+        gsap.to(el, { y: -14, duration: 3.2, ease: EASES.inOut, repeat: -1, yoyo: true })
       })
-
-      // Card flutuante secundário (amplitude/ritmo diferentes)
       gsap.utils.toArray<HTMLElement>('[data-anim="float2"]').forEach((el) => {
         gsap.to(el, {
           y: -10,
           rotate: -2,
           duration: 2.4,
-          ease: 'sine.inOut',
+          ease: EASES.inOut,
           repeat: -1,
           yoyo: true,
           delay: 0.6,
         })
       })
 
-      // Card de calendário "ganhando vida"
       const rows = gsap.utils.toArray<HTMLElement>('[data-anim="mockup-row"]')
       if (rows.length) {
         gsap.from(rows, {
           x: -28,
           autoAlpha: 0,
-          duration: 0.6,
-          ease: 'power3.out',
+          duration: DURATION.reveal,
+          ease: EASES.out,
           stagger: 0.12,
           delay: 0.35,
         })
@@ -75,39 +60,105 @@ export function Animations() {
         gsap.from(bars, {
           scaleY: 0,
           autoAlpha: 0,
-          duration: 0.5,
-          ease: 'back.out(2)',
+          duration: DURATION.reveal,
+          ease: EASES.out,
           stagger: 0.12,
           delay: 0.5,
+          transformOrigin: 'top',
         })
       }
       gsap.utils.toArray<HTMLElement>('[data-anim="mockup-badge"]').forEach((el) => {
         gsap.to(el, {
           scale: 1.07,
           duration: 1.1,
-          ease: 'sine.inOut',
+          ease: EASES.inOut,
           repeat: -1,
           yoyo: true,
           transformOrigin: 'center',
         })
       })
 
-      // Reveals no scroll
       gsap.utils.toArray<HTMLElement>('[data-anim="reveal"]').forEach((el) => {
         gsap.from(el, {
-          y: 48,
+          y: REVEAL.y,
           autoAlpha: 0,
-          duration: 0.8,
-          ease: 'power3.out',
-          scrollTrigger: { trigger: el, start: 'top 86%', once: true },
+          duration: REVEAL.duration,
+          ease: EASES.out,
+          scrollTrigger: { trigger: el, start: REVEAL.start, once: true },
+        })
+      })
+
+      gsap.utils.toArray<HTMLElement>('[data-anim="reveal-stagger"]').forEach((group) => {
+        const children = Array.from(group.children) as HTMLElement[]
+        if (!children.length) return
+        gsap.from(children, {
+          y: REVEAL.y,
+          autoAlpha: 0,
+          duration: REVEAL.duration,
+          ease: EASES.out,
+          stagger: REVEAL.stagger,
+          scrollTrigger: { trigger: group, start: REVEAL.start, once: true },
+        })
+      })
+
+      gsap.utils.toArray<HTMLElement>('[data-anim="parallax"]').forEach((el) => {
+        const amount = Number(el.dataset.parallax ?? '-10')
+        gsap.to(el, {
+          yPercent: amount,
+          ease: EASES.none,
+          scrollTrigger: { trigger: el, start: 'top bottom', end: 'bottom top', scrub: true },
+        })
+      })
+
+      gsap.utils.toArray<SVGPathElement>('[data-anim="route"]').forEach((path) => {
+        const len = path.getTotalLength()
+        gsap.set(path, { strokeDasharray: len, strokeDashoffset: len })
+        gsap.to(path, {
+          strokeDashoffset: 0,
+          ease: EASES.none,
+          scrollTrigger: {
+            trigger: path.closest('section') ?? path,
+            start: 'top 80%',
+            end: 'bottom 60%',
+            scrub: true,
+          },
+        })
+      })
+
+      gsap.utils.toArray<HTMLElement>('[data-anim="pin"]').forEach((el) => {
+        ScrollTrigger.create({
+          trigger: el,
+          start: 'top top',
+          end: '+=80%',
+          pin: true,
+          pinSpacing: true,
         })
       })
 
       ScrollTrigger.refresh()
     })
 
-    // Recalcula posições quando a orientação muda ou as fontes (Arial Black/Geist)
-    // terminam de carregar e deslocam as alturas dos painéis.
+    const pressEls = Array.from(
+      document.querySelectorAll<HTMLElement>('[data-anim="press"]'),
+    )
+    const down = (e: Event) =>
+      gsap.to(e.currentTarget as HTMLElement, {
+        scale: 0.96,
+        duration: DURATION.hover,
+        ease: EASES.out,
+      })
+    const up = (e: Event) =>
+      gsap.to(e.currentTarget as HTMLElement, {
+        scale: 1,
+        duration: DURATION.hover,
+        ease: EASES.out,
+      })
+    pressEls.forEach((el) => {
+      el.addEventListener('pointerdown', down)
+      el.addEventListener('pointerup', up)
+      el.addEventListener('pointerleave', up)
+    })
+
     const onResize = () => ScrollTrigger.refresh()
     window.addEventListener('orientationchange', onResize)
     if (document.fonts?.ready) {
@@ -116,6 +167,11 @@ export function Animations() {
 
     return () => {
       window.removeEventListener('orientationchange', onResize)
+      pressEls.forEach((el) => {
+        el.removeEventListener('pointerdown', down)
+        el.removeEventListener('pointerup', up)
+        el.removeEventListener('pointerleave', up)
+      })
       ctx.revert()
     }
   }, [])

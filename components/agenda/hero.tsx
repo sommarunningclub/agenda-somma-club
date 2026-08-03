@@ -121,6 +121,15 @@ export function Hero({ events }: { events: EventCardData[] }) {
           {/* Selo girando (CTA) */}
           <SpinBadge className="absolute -bottom-8 right-0 z-40 hidden md:flex lg:-right-6" />
         </div>
+
+        <a
+          href="#sobre"
+          data-anim="hero-item"
+          className="col-span-full mx-auto mt-4 inline-flex items-center gap-2 text-sm font-bold uppercase tracking-wide text-black/70 transition-colors hover:text-black lg:col-span-2"
+        >
+          Role e descubra
+          <ArrowDown className="h-4 w-4 animate-bounce" />
+        </a>
       </div>
     </section>
   )

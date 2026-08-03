@@ -10,6 +10,9 @@ import { buildSubscribeLinks } from '@/lib/subscribe-links'
 import { toCardData } from '@/lib/sample-events'
 import { formatEventDate } from '@/lib/format'
 import { getSiteUrl, DEFAULT_TIMEZONE } from '@/lib/constants'
+import { runningRoutePath } from '@/lib/route-path'
+
+const CORRIDAS_ROUTE = runningRoutePath({ width: 1000, height: 280, points: 7, seed: 42 })
 
 export const revalidate = 300
 
@@ -82,8 +85,23 @@ export default async function CorridasPage() {
       <SiteHeader />
 
       <main>
-        <section className="bg-[#ff2c03] px-5 py-12 sm:px-8 md:py-16">
-          <div className="mx-auto max-w-4xl">
+        <section className="relative overflow-hidden bg-[#ff2c03] px-5 py-12 sm:px-8 md:py-16">
+          <svg
+            viewBox="0 0 1000 280"
+            className="pointer-events-none absolute inset-x-0 top-1/2 h-auto w-full -translate-y-1/2 opacity-20"
+            fill="none"
+            aria-hidden
+          >
+            <path
+              data-anim="route"
+              d={CORRIDAS_ROUTE}
+              stroke="#000"
+              strokeWidth={6}
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+          </svg>
+          <div data-anim="reveal" className="mx-auto max-w-4xl">
             <Link
               href="/agenda"
               className="inline-flex items-center gap-1.5 text-sm font-bold text-black/70 transition-colors hover:text-black"
@@ -108,9 +126,9 @@ export default async function CorridasPage() {
           </div>
         </section>
 
-        <div className="relative z-10 rounded-t-[2.5rem] bg-white text-neutral-900 shadow-[0_-30px_60px_rgba(0,0,0,0.25)] md:rounded-t-[3.5rem]">
+        <div className="agenda-surface relative z-10 rounded-t-[2.5rem] shadow-[0_-20px_50px_rgba(255,44,3,0.12)] md:rounded-t-[3.5rem]">
           <section className="px-5 py-12 sm:px-8 md:py-16">
-            <div className="mx-auto max-w-4xl">
+            <div data-anim="reveal" className="mx-auto max-w-4xl">
               <h2 className="text-2xl font-black uppercase tracking-tight text-black">
                 Próximas corridas no DF
               </h2>
@@ -121,7 +139,7 @@ export default async function CorridasPage() {
                   gente te avisa.
                 </p>
               ) : (
-                <div className="mt-6 grid gap-4 sm:grid-cols-2">
+                <div data-anim="reveal-stagger" className="mt-6 grid gap-4 sm:grid-cols-2">
                   {races.map((e) => (
                     <EventCard key={e.id} event={toCardData(e)} />
                   ))}
